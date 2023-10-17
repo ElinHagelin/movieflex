@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import LanguagePie from './components/LanguagePie.jsx'
+import MonthBar from './components/MonthBar.jsx'
 import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
      <h1>MovieFlex</h1>
     </header>
     <LanguagePie />
+    <MonthBar />
     </>
   )
 }
