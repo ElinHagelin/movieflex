@@ -5,6 +5,7 @@ import sortLanguageArray from '../utils/sortLanguage.js'
 import { mergeArrays } from '../utils/mergeArrays.js'
 import { sortMoviesByDate } from '../utils/sortMoviesByDate.js'
 import sortByRuntime from '../utils/sortByRuntime.js'
+import sortByGenre from '../utils/sortByGenre'
 
 
 
@@ -66,7 +67,6 @@ export const getMovieRuntime = () => {
     const sortedSpecialsArray = sortByRuntime(specialsArray)
     const sortedDocumentariesArray = sortByRuntime(documentariesArray)
         
-    console.log(sortedSpecialsArray);
         
     const labels = sortedFeatureFilmsArray.map((_, index) => index + 1)
 
@@ -91,5 +91,26 @@ export const getMovieRuntime = () => {
         ]
     }
     // Göra om: antalet filmer på y-axeln och tid på x-axeln?
+}
+
+export const getMovieGenre = () => {
+    const featureFilmsArray = featureFilms.map(movie => movie.Genre)
+    const specialsArray = specials.map(movie => movie.Genre)
+
+    const combinedGenreArray = [...featureFilmsArray, ...specialsArray]
+
+    const sortedCombinedGenreArray = sortByGenre(combinedGenreArray)
+    sortedCombinedGenreArray.push({genre: 'Documentary', amount: (documentaries.length + 1)})
+    
+    return {
+        labels: sortedCombinedGenreArray.map(obj => obj.genre),
+        datasets: [
+            {
+                label: 'Movie genres',
+                data: sortedCombinedGenreArray.map(obj => obj.amount),
+                backgroundColor: colors
+            }
+        ]
+    }
 }
 
