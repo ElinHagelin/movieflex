@@ -5,6 +5,8 @@ import sortLanguageArray from '../utils/sortLanguage.js'
 import { mergeArrays } from '../utils/mergeArrays.js'
 import { sortMoviesByDate } from '../utils/sortMoviesByDate.js'
 
+
+
 const colors = ['#B2C9A6', '#9AC087', '#8EC273', '#85B373', '#7BA472', '#719571', '#678570', '#5E7670']
 const mergedArray = mergeArrays(specials, documentaries, featureFilms)
 
@@ -22,9 +24,6 @@ export const getAllLanguages = () => {
 } 
 
 export const getMoviesPerMonth = () => {
-
-    const months = ['January 22', 'February 22', 'March 22', 'April 22', 'May 22', 'June 22', 'July 22', 'August 22', 'September 22', 'October 22', 'November 22', 'December 22']
-
    
     const featureFilmsArray = featureFilms.map(movie => movie.Premiere)
     const specialsArray = specials.map(movie => movie.Premiere)
@@ -34,9 +33,6 @@ export const getMoviesPerMonth = () => {
     const sortedSpecialsArray = sortMoviesByDate(specialsArray)
     const sortedDocumentariesArray = sortMoviesByDate(documentariesArray)
 
-    console.log('sortedFeatureFilmsArrays är: ', sortedFeatureFilmsArray);
-    console.log('sortedSpecialsArrays är: ', sortedSpecialsArray);
-    console.log('sortedDocumentariesArrays är: ', sortedDocumentariesArray);
     
     return {
         labels: sortedFeatureFilmsArray.map(obj => obj.month),
@@ -58,5 +54,9 @@ export const getMoviesPerMonth = () => {
             }
         ]
     }
+}
+
+export const getMovieLength = () => {
+
 }
 

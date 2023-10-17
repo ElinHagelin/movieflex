@@ -6,8 +6,6 @@ import { getAllLanguages } from "../data/getMovies.js";
 const LanguagePie = () => {
 
     const languagePieConfig = getAllLanguages()
-    
-    console.log(languagePieConfig)
 
     return (
         <section>
