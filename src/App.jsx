@@ -2,6 +2,7 @@
 import LanguagePie from './components/LanguagePie.jsx'
 import MonthBar from './components/MonthBar.jsx'
 import './App.css'
+import LengthLine from './components/LengthLine.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
     </header>
     <LanguagePie />
     <MonthBar />
+    <LengthLine />
     </>
   )
 }

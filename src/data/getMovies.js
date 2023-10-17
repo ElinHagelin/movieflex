@@ -4,6 +4,7 @@ import featureFilms from './feature-films.json'
 import sortLanguageArray from '../utils/sortLanguage.js'
 import { mergeArrays } from '../utils/mergeArrays.js'
 import { sortMoviesByDate } from '../utils/sortMoviesByDate.js'
+import sortByRuntime from '../utils/sortByRuntime.js'
 
 
 
@@ -56,7 +57,39 @@ export const getMoviesPerMonth = () => {
     }
 }
 
-export const getMovieLength = () => {
+export const getMovieRuntime = () => {
+    const featureFilmsArray = featureFilms.map(movie => movie.Runtime)
+    const specialsArray = specials.map(movie => movie.Runtime)
+    const documentariesArray = documentaries.map(movie => movie.Runtime)
 
+    const sortedFeatureFilmsArray = sortByRuntime(featureFilmsArray)
+    const sortedSpecialsArray = sortByRuntime(specialsArray)
+    const sortedDocumentariesArray = sortByRuntime(documentariesArray)
+        
+    console.log(sortedSpecialsArray);
+        
+    const labels = sortedFeatureFilmsArray.map((_, index) => index + 1)
+
+    return {
+        labels,
+        datasets: [
+            {
+                label: 'Feature films runtime',
+                data: sortedFeatureFilmsArray.map(obj => obj),
+                backgroundColor: '#B2C9A6'
+            },
+            {
+                label: 'Specials per month',
+                data: sortedSpecialsArray.map(obj => obj),
+                backgroundColor: '#85B373'
+            },
+            {
+                label: 'Documentaries per month',
+                data: sortedDocumentariesArray.map(obj => obj),
+                backgroundColor: '#5E7670'
+            }
+        ]
+    }
+    // Göra om: antalet filmer på y-axeln och tid på x-axeln?
 }
 
