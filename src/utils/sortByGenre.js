@@ -13,7 +13,7 @@ const sortByGenre = (inputArray) => {
         }
     });
 
-    genreArray.sort((a, b) => a.amount - b.value)
+    genreArray.sort((a, b) => a.amount - b.amount)
 
     return genreArray 
 }

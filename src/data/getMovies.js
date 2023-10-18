@@ -101,6 +101,8 @@ export const getMovieGenre = () => {
 
     const sortedCombinedGenreArray = sortByGenre(combinedGenreArray)
     sortedCombinedGenreArray.push({genre: 'Documentary', amount: (documentaries.length + 1)})
+    sortedCombinedGenreArray.reverse()
+
     
     return {
         labels: sortedCombinedGenreArray.map(obj => obj.genre),
