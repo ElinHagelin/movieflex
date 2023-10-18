@@ -37,7 +37,16 @@ const Movies = () => {
                     {moviesToShow.map(movie => (
                         <li key={movie.Title}>
                             <h3>{movie.Title}</h3>
-                        </li>
+                            {moviesToShow.length <= 1 ?
+                            <>
+                            <p>{movie.Runtime}</p>
+                            <p>{movie.Language}</p>
+                            <p>{movie.Premiere}</p>
+                            {movie.Genre ? <p>{movie.Genre}</p> : <p>Documentary</p>} 
+                            </>
+                            : null}
+                            </li>
+                            
                     ))}
                 </ul>
                 : <p>Inga filmer än...</p>
