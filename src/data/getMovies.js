@@ -10,7 +10,7 @@ import sortByGenre from '../utils/sortByGenre'
 
 
 const colors = ['#B2C9A6', '#9AC087', '#8EC273', '#85B373', '#7BA472', '#719571', '#678570', '#5E7670']
-const mergedArray = mergeArrays(specials, documentaries, featureFilms)
+export const mergedArray = mergeArrays(specials, documentaries, featureFilms)
 
 export const getAllLanguages = () => {
 
