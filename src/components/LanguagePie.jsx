@@ -7,9 +7,18 @@ const LanguagePie = () => {
 
     const languagePieConfig = getAllLanguages()
 
+    const options = {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Languages',
+            },
+        },
+    };
+
     return (
         <section>
-            <Pie data={languagePieConfig} />
+            <Pie options={options} data={languagePieConfig} />
         </section>
     )
 }

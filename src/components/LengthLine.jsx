@@ -9,9 +9,18 @@ ChartJS.register( CategoryScale, LinearScale, PointElement, LineElement, Title, 
 const LengthLine = () => {
     const lengthLineConfig = getMovieRuntime()
 
+    const options = {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Runtime',
+            },
+        },
+    };
+
     return (
         <section>
-            <Line data={lengthLineConfig} />
+            <Line options={options} data={lengthLineConfig} />
         </section>
     )
 }

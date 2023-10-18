@@ -40,17 +40,17 @@ export const getMoviesPerMonth = () => {
         labels: sortedFeatureFilmsArray.map(obj => obj.month),
         datasets: [
             {
-                label: 'Feature films per month',
+                label: 'Feature films',
                 data: sortedFeatureFilmsArray.map(obj => obj.amount),
                 backgroundColor: '#B2C9A6'
             },
             {
-                label: 'Specials per month',
+                label: 'Specials',
                 data: sortedSpecialsArray.map(obj => obj.amount),
                 backgroundColor: '#85B373'
             },
             {
-                label: 'Documentaries per month',
+                label: 'Documentaries',
                 data: sortedDocumentariesArray.map(obj => obj.amount),
                 backgroundColor: '#5E7670'
             }
@@ -74,23 +74,24 @@ export const getMovieRuntime = () => {
         labels,
         datasets: [
             {
-                label: 'Feature films runtime',
+                label: 'Feature films',
                 data: sortedFeatureFilmsArray.map(obj => obj),
                 backgroundColor: '#B2C9A6'
             },
             {
-                label: 'Specials per month',
+                label: 'Specials',
                 data: sortedSpecialsArray.map(obj => obj),
                 backgroundColor: '#85B373'
             },
             {
-                label: 'Documentaries per month',
+                label: 'Documentaries',
                 data: sortedDocumentariesArray.map(obj => obj),
                 backgroundColor: '#5E7670'
             }
         ]
     }
     // Göra om: antalet filmer på y-axeln och tid på x-axeln?
+    // titel på x- och y-axel så det är mindre förvirrande?
 }
 
 export const getMovieGenre = () => {
@@ -103,7 +104,7 @@ export const getMovieGenre = () => {
     sortedCombinedGenreArray.push({genre: 'Documentary', amount: (documentaries.length + 1)})
     sortedCombinedGenreArray.reverse()
 
-    
+
     return {
         labels: sortedCombinedGenreArray.map(obj => obj.genre),
         datasets: [
