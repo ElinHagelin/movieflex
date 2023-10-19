@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { mergedArray } from "../data/getMovies.js";
+import { mergedArray } from "../data/constants.js";
 import movieMatch from "../utils/searchFn.js";
 import MovieCard from "../components/MovieCard.jsx";
 import { useScroll, motion } from "framer-motion";
@@ -22,7 +22,7 @@ const Movies = () => {
 		if (!event.target.value) {
 			setMoviesToShow(movies)
 		} else {
-			setMoviesToShow(moviesToShow.filter(movie => movieMatch(movie, event.target.value)))
+			setMoviesToShow(movies.filter(movie => movieMatch(movie, event.target.value)))
 		}
 	}
 
@@ -32,7 +32,7 @@ const Movies = () => {
             <input 
                 type="text" 
                 id="search-input" 
-                onChange={handleSearchChange} 
+                onChange={(event) => handleSearchChange(event)} 
             />
             {moviesToShow 
                 ? <ul>

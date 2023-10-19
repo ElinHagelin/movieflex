@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { motion } from "framer-motion"
-import { menuVariants, linkVariants, transition, linkAnimationDelay } from "../styles/menu.js"
+import { menuVariants, linkVariants, transition, linkAnimationDelay } from "../styles/menu-styles.js"
 
 const Menu = ({menuOpen, setMenuOpen}) => {
     return (

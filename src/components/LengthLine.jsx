@@ -1,7 +1,6 @@
-
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { getMovieRuntime } from '../data/getMovies.js';
+import { getMovieRuntime } from '../data/chartConfigs/lengthLineConfig.js';
 
 
 ChartJS.register( CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend );
@@ -16,6 +15,21 @@ const LengthLine = () => {
                 text: 'Runtime',
             },
         },
+        scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Filmer',
+              },
+            },
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Minuter',
+              },
+            },
+          },
     };
 
     return (

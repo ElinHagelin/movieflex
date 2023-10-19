@@ -1,37 +1,9 @@
 import { motion } from "framer-motion"
+import { top, center, bottom } from "../styles/hamburger-styles"
 
 const Hamburger = ({menuOpen, setMenuOpen}) => {
 
-    const variant = menuOpen ? "opened" : "closed";
-
-    const top = {
-        closed: {
-          rotate: 0,
-          translateY: 0
-        },
-        opened: {
-          rotate: 45,
-          translateY: 6.8
-        }
-      };
-      const center = {
-        closed: {
-          opacity: 1
-        },
-        opened: {
-          opacity: 0
-        }
-      };
-      const bottom = {
-        closed: {
-          rotate: 0,
-          translateY: 0
-        },
-        opened: {
-          rotate: -45,
-          translateY: -6.8
-        }
-      };
+  const variant = menuOpen ? "opened" : "closed";
 
     return (
         <motion.button 
