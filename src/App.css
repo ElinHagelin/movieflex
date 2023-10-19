@@ -62,10 +62,13 @@ section {
 
 ul {
   list-style: none;
+  padding-inline-start:0
 }
 
 ul > li {
   border: 1px solid black;
   margin: 0.5em 0;
   padding: 0.3em;
+  min-width: 40vw;
+  /* box-shadow: 0.3em 0.3em 0.6em #8a8a8a */
 }

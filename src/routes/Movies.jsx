@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { mergedArray } from "../data/getMovies.js";
-import compareFn from "../utils/compareFn.js";
 import movieMatch from "../utils/searchFn.js";
+import MovieCard from "../components/MovieCard.jsx";
+import { useScroll, motion } from "framer-motion";
 
 
 
 const Movies = () => {
     const [movies, setMovies] = useState(null)
     const [moviesToShow, setMoviesToShow] = useState(null)
+    
 
     useEffect(() => {
         const sortedArray = [...mergedArray]
@@ -25,7 +27,7 @@ const Movies = () => {
 	}
 
     return (
-        <>
+        <div>
             <label htmlFor="search-input">Sök film</label>
             <input 
                 type="text" 
@@ -35,23 +37,12 @@ const Movies = () => {
             {moviesToShow 
                 ? <ul>
                     {moviesToShow.map(movie => (
-                        <li key={movie.Title}>
-                            <h3>{movie.Title}</h3>
-                            {moviesToShow.length <= 1 ?
-                            <>
-                            <p>{movie.Runtime}</p>
-                            <p>{movie.Language}</p>
-                            <p>{movie.Premiere}</p>
-                            {movie.Genre ? <p>{movie.Genre}</p> : <p>Documentary</p>} 
-                            </>
-                            : null}
-                            </li>
-                            
+                        <MovieCard movie={movie} moviesToShow={moviesToShow} key={movie.Title} />  
                     ))}
                 </ul>
                 : <p>Inga filmer än...</p>
             }
-        </>
+        </div>
     )
 }
 
