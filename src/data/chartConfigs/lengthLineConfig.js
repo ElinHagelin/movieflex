@@ -2,11 +2,13 @@ import featureFilms from '../movieData/feature-films.json'
 import specials from '../movieData/specials.json'
 import documentaries from '../movieData/documentaries.json'
 import sortByRuntime from '../../utils/sortByRuntime.js'
+import { mapArray } from '../../utils/manipulateArrays.js'
 
-export const getMovieRuntime = () => {
-    const featureFilmsArray = featureFilms.map(movie => movie.Runtime)
-    const specialsArray = specials.map(movie => movie.Runtime)
-    const documentariesArray = documentaries.map(movie => movie.Runtime)
+const getMovieRuntime = () => {
+    
+    const featureFilmsArray = mapArray(featureFilms, 'Runtime')
+    const specialsArray = mapArray(specials, 'Runtime')
+    const documentariesArray = mapArray(documentaries, 'Runtime')
 
     const sortedFeatureFilmsArray = sortByRuntime(featureFilmsArray)
     const sortedSpecialsArray = sortByRuntime(specialsArray)
@@ -44,3 +46,5 @@ export const getMovieRuntime = () => {
     }
     // Göra om: antalet filmer på y-axeln och tid på x-axeln?
 }
+
+export default getMovieRuntime

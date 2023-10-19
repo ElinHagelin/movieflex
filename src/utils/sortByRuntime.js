@@ -1,16 +1,8 @@
+import compareFn from "./compareFn.js";
 
 
 const sortByRuntime = (inputArray) => {
-    function compareRuntime(a, b) {
-        if (a < b) {
-          return -1;
-        } else if (a > b) {
-          return 1;
-        }
-        return 0;
-      }
 
-      
       function convertTimeToMinutes(timeString) {
           const timeSplit = timeString.split(' ')
           
@@ -25,12 +17,7 @@ const sortByRuntime = (inputArray) => {
         }
         
         const moviesInMinutes = inputArray.map(convertTimeToMinutes);
-        // const documentariesInMinutes = documentariesArray.map(convertTimeToMinutes);
-        // const featuresInMinutes = featureFilmsArray.map(convertTimeToMinutes);
-        
-        // const sortedFeatureFilmsArray = featuresInMinutes.sort(compareRuntime)
-        // const sortedSpecialsArray = specialsInMinutes.sort(compareRuntime)
-        const sortedArray = moviesInMinutes.sort(compareRuntime)
+        const sortedArray = moviesInMinutes.sort(compareFn)
         return sortedArray
 }
 

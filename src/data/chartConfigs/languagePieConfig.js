@@ -1,10 +1,11 @@
 import { mergedArray } from "../constants.js"
 import sortLanguageArray from "../../utils/sortLanguage.js"
 import { colors } from "../constants.js"
+import { mapArray } from "../../utils/manipulateArrays.js"
 
-export const getAllLanguages = () => {
+const getAllLanguages = () => {
 
-    const languageArray = mergedArray.map(film => film.Language)
+    const languageArray = mapArray(mergedArray, 'Language')
     const sortedLanguageArray = sortLanguageArray(languageArray)
     return {
         labels: sortedLanguageArray.map(movie => movie.language),
@@ -14,3 +15,5 @@ export const getAllLanguages = () => {
             backgroundColor: colors
         }]}
 } 
+
+export default getAllLanguages

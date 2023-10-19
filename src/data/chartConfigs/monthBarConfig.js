@@ -1,13 +1,14 @@
 import featureFilms from '../movieData/feature-films.json'
 import specials from '../movieData/specials.json'
 import documentaries from '../movieData/documentaries.json'
-import { sortMoviesByDate } from '../../utils/sortMoviesByDate.js'
+import sortMoviesByDate from '../../utils/sortMoviesByDate.js'
+import { mapArray } from '../../utils/manipulateArrays.js'
 
-export const getMoviesPerMonth = () => {
+const getMoviesPerMonth = () => {
    
-    const featureFilmsArray = featureFilms.map(movie => movie.Premiere)
-    const specialsArray = specials.map(movie => movie.Premiere)
-    const documentariesArray = documentaries.map(movie => movie.Premiere)
+    const featureFilmsArray = mapArray(featureFilms, 'Premiere')
+    const specialsArray = mapArray(specials, 'Premiere')
+    const documentariesArray = mapArray(documentaries, 'Premiere')
 
     const sortedFeatureFilmsArray = sortMoviesByDate(featureFilmsArray)
     const sortedSpecialsArray = sortMoviesByDate(specialsArray)
@@ -35,3 +36,5 @@ export const getMoviesPerMonth = () => {
         ]
     }
 }
+
+export default getMoviesPerMonth

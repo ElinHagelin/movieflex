@@ -1,7 +1,7 @@
-import GenreBar from "../components/GenreBar.jsx"
-import LanguagePie from "../components/LanguagePie.jsx"
-import LengthLine from "../components/LengthLine.jsx"
-import MonthBar from "../components/MonthBar.jsx"
+import GenreBar from "../components/charts/GenreBar.jsx"
+import LanguagePie from "../components/charts/LanguagePie.jsx"
+import LengthLine from "../components/charts/LengthLine.jsx"
+import MonthBar from "../components/charts/MonthBar.jsx"
 
 const Charts = () => {
 

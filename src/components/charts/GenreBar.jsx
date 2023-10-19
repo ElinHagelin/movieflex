@@ -1,15 +1,16 @@
 import { Chart as ChartJS, Tooltip, Legend, LinearScale, BarElement, CategoryScale} from 'chart.js';
 ChartJS.register(Tooltip, Legend, LinearScale, BarElement, CategoryScale);
 import { Bar } from 'react-chartjs-2'
-import { getMoviesPerMonth } from '../data/chartConfigs/monthBarConfig.js';
+import getMovieGenre from '../../data/chartConfigs/genreBarConfig.js';
 
-const MonthBar = () => {
+const GenreBar = () => {
+    const genreBarConfig = getMovieGenre()
 
     const options = {
         plugins: {
             title: {
                 display: true,
-                text: 'Movies released in 2022',
+                text: 'Genres',
             },
         },
         scales: {
@@ -17,20 +18,17 @@ const MonthBar = () => {
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'Antal filmer',
+                text: 'Movies',
               },
             },
           },
     };
-    
-    const MonthBarConfig = getMoviesPerMonth()
 
     return (
         <section>
-            <Bar options={options} data={MonthBarConfig} />
+            <Bar options={options} data={genreBarConfig} />
         </section>
     )
 }
 
-export default MonthBar
-
+export default GenreBar

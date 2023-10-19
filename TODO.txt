@@ -1,0 +1,7 @@
+¤ Göra hamburgermenyn lite större
+
+¤ Scroll-animationen
+
+¤ Animera loggan
+
+¤ Flytta mergedArray till manipulateArrays.js

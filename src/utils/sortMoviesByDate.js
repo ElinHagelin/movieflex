@@ -18,4 +18,4 @@ function sortMoviesByDate(inputArray) {
 }
 
 
-export {sortMoviesByDate}
+export default sortMoviesByDate

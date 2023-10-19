@@ -1,12 +1,13 @@
 export const menuVariants = {
     closed: {
-      transform: 'translateX(-11em)',
+      left: '-16em'
     },
     open: {
-      transform: 'translateX(0)',
+      left: 0,
       transition: {
-        staggerChildren: 1, // Justera fördröjningen här
+        staggerChildren: 1,
       },
+      boxShadow: '0.3em 0.3em 0.6em #8a8a8a',
     },
 };
 
