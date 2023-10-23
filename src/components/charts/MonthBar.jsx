@@ -3,7 +3,7 @@ ChartJS.register(Tooltip, Legend, LinearScale, BarElement, CategoryScale);
 import { Bar } from 'react-chartjs-2'
 import getMoviesPerMonth from '../../data/chartConfigs/monthBarConfig.js';
 
-const MonthBar = () => {
+const MonthBar = ({slideVariants, direction}) => {
 
     const options = {
         plugins: {
@@ -26,7 +26,13 @@ const MonthBar = () => {
     const MonthBarConfig = getMoviesPerMonth()
 
     return (
-        <section className='chart'>
+        <section 
+            className='chart'
+            // variants={slideVariants}
+            // initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
+            // animate="visible"
+            // exit="exit"     
+        >
             <Bar options={options} data={MonthBarConfig} />
         </section>
     )

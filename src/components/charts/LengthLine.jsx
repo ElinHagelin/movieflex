@@ -5,7 +5,7 @@ import getMovieRuntime from '../../data/chartConfigs/lengthLineConfig.js';
 
 ChartJS.register( CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend );
 
-const LengthLine = () => {
+const LengthLine = ({slideVariants, direction}) => {
     const lengthLineConfig = getMovieRuntime()
 
     const options = {
@@ -33,7 +33,13 @@ const LengthLine = () => {
     };
 
     return (
-        <section className='chart'>
+        <section 
+            className='chart'
+            // variants={slideVariants}
+            // initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
+            // animate="visible"
+            // exit="exit"   
+        >
             <Line options={options} data={lengthLineConfig} />
         </section>
     )

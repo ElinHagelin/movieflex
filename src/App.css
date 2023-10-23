@@ -59,8 +59,6 @@ header {
   font-size: 1.2em;
 }
 
-
-
 .movies-container {
   text-align: center;
 }
@@ -90,25 +88,23 @@ ul > li > div {
 
 .carousel {
   position: relative;
-  /* border-radius: 10px; */
-  /* height: 400px; */
   width: 80vw;
   height: 70vh;
-  margin: auto;
-  /* display: grid; */
   place-content: center;
-  /* overflow: hidden; */
 }
 
+.chart-container {
+  width: 85%;
+  height: 99%;
+  margin: auto;
+}
 
-.carousel > .chart {
+.chart {
   width: 100%;
-  min-height: 60vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
-  height: 99%;
   border-radius: 8px;
   max-width: 80vw;
   margin: auto;
@@ -132,6 +128,7 @@ ul > li > div {
   margin: auto 10px;
   height: 40px;
   width: 40px;
+  cursor: pointer;
 }
 
 .left {
@@ -143,7 +140,7 @@ ul > li > div {
 }
 
 .indicator {
-  margin-top: 20px;
+  margin-top: 2.5em;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -154,8 +151,9 @@ ul > li > div {
   width: 15px;
   height: 15px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-.active {
+.dot.active {
   background-color: #4c7642;
 }
