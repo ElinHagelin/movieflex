@@ -1,59 +1,49 @@
-import { motion, useScroll } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
+import { liInitial, liHover, divInitial, divHover } from "../styles/movie-card-styles.js"
 
 const MovieCard = ({movie, moviesToShow}) => {
-    // const ref = useRef(null)
+    const ref = useRef(null)
 
-    // const scrollYProgress = useScroll({
-    //     target: ref,
-    //     offset: ['o 1', '1.33 1']
-    // })
+    const {scrollYProgress} = useScroll({
+        target: ref,
+        offset: ['0 1', '1.25 1']
+    })
+    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
     
-    const transition = { duration: 0.4 }
-    const liHover = {
-        scale: 1.03,
-        boxShadow: '0.3em 0.3em 0.6em #8a8a8a',
-        transition: transition
-    }
-
-    const divHover = {
-        opacity: 1,
-        display: 'block',
-        transition: transition
-    }
-
-    const divInitial = {
-        opacity: 0, 
-        display: 'none'
-    }
 
     const divAnimate = {
         opacity: moviesToShow.length === 1 ? 1 : 0, 
         display: 'block'
     }
 
+
     return (
         <motion.li
             whileHover={liHover}
-            // ref={ref}
-            // style={{
-            //     scale: scrollYProgress,
-            //     opacity: scrollYProgress
-            // }}
+            initial={liInitial}
+            ref={ref}
+            style={{
+                scale: scaleProgress,
+                opacity: scrollYProgress
+            }}
             >
-          <h3>{movie.Title}</h3>
-          <motion.div
-            whileHover={divHover}
-            initial={divInitial}
-            animate={divAnimate}
-          >
-            <p>{movie.Runtime}</p>
-            <p>{movie.Language}</p>
-            <p>{movie.Premiere}</p>
-            {movie.Genre ? <p>{movie.Genre}</p> : <p>Documentary</p>}
-          </motion.div>
+            <div>
+        		<h3>{movie.Title}</h3>
+				<motion.div
+					whileHover={divHover}
+					initial={divInitial}
+					animate={divAnimate}
+				>
+					<p>{movie.Runtime}</p>
+					<p>{movie.Language}</p>
+					<p>{movie.Premiere}</p>
+					{movie.Genre ? <p>{movie.Genre}</p> : <p>Documentary</p>}
+				</motion.div>
+
+            </div>
         </motion.li>
-      );
+    );
 }
 
 export default MovieCard

@@ -9,9 +9,22 @@ const Header = () => {
 
     return (
 		<header>
-			<img className='logo' src="../assets/images/cinema+digital+film+movie+multimedia+video+icon-1320186751465241961.svg" alt="logo" />
+			<motion.img 
+				className='logo' 
+				src="../assets/images/cinema+digital+film+movie+multimedia+video+icon-1320186751465241961.svg" alt="logo" 
+				animate={{
+					rotate: [0, 90, 180, 270, 360],
+					x: [-200, -150, -100, -50, 0],
+				}}
+				transition={{type: "spring", duration: 1}}
+			/>
 
-			<h1>MovieFlex</h1>
+			<motion.h1 
+				animate={{x: [-20, 0],}}
+				transition={{type: "spring", delay: 0.35}}
+			>
+				MovieFlex
+			</motion.h1>
 
 			<Hamburger menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
 

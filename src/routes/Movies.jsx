@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { mergedArray } from "../data/constants.js";
+import { mergedArray } from "../utils/manipulateArrays.js"
 import movieMatch from "../utils/searchFn.js";
 import MovieCard from "../components/MovieCard.jsx";
-import { useScroll, motion } from "framer-motion";
-
 
 
 const Movies = () => {
@@ -27,13 +25,15 @@ const Movies = () => {
 	}
 
     return (
-        <div>
-            <label htmlFor="search-input">Sök film</label>
-            <input 
-                type="text" 
-                id="search-input" 
-                onChange={(event) => handleSearchChange(event)} 
-            />
+        <main className="movies-container">
+            <div className="search-container">
+                <label htmlFor="search-input">Sök film</label>
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    onChange={(event) => handleSearchChange(event)} 
+                />
+            </div>
             {moviesToShow 
                 ? <ul>
                     {moviesToShow.map(movie => (
@@ -42,7 +42,7 @@ const Movies = () => {
                 </ul>
                 : <p>Inga filmer än...</p>
             }
-        </div>
+        </main>
     )
 }
 

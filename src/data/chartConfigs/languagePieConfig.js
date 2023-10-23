@@ -1,4 +1,4 @@
-import { mergedArray } from "../constants.js"
+import { mergedArray} from "../../utils/manipulateArrays.js"
 import sortLanguageArray from "../../utils/sortLanguage.js"
 import { colors } from "../constants.js"
 import { mapArray } from "../../utils/manipulateArrays.js"
