@@ -25,7 +25,7 @@ const GenreBar = () => {
     };
 
     return (
-        <section>
+        <section className='chart'>
             <Bar options={options} data={genreBarConfig} />
         </section>
     )

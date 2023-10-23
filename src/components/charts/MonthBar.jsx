@@ -26,7 +26,7 @@ const MonthBar = () => {
     const MonthBarConfig = getMoviesPerMonth()
 
     return (
-        <section>
+        <section className='chart'>
             <Bar options={options} data={MonthBarConfig} />
         </section>
     )

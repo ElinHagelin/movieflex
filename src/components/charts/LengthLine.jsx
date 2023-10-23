@@ -33,7 +33,7 @@ const LengthLine = () => {
     };
 
     return (
-        <section>
+        <section className='chart'>
             <Line options={options} data={lengthLineConfig} />
         </section>
     )

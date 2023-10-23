@@ -17,7 +17,7 @@ const LanguagePie = () => {
     };
 
     return (
-        <section>
+        <section className='chart'>
             <Pie options={options} data={languagePieConfig} />
         </section>
     )
