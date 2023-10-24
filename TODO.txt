@@ -1,3 +1,5 @@
 ¤ Göra hamburgermenyn lite större
 
 ¤ Animera loggan
+
+¤ Fixa scroll-bugg

@@ -12,10 +12,10 @@ const Menu = ({menuOpen, setMenuOpen}) => {
 					exit='closed'
 					>
 						<motion.div variants={linkVariants} transition={{ delay: linkAnimationDelay }}>
-							<NavLink to='/' onClick={() => setMenuOpen(!menuOpen)}>Se statistik</NavLink>
+							<NavLink to='/' onClick={() => setMenuOpen(!menuOpen)}>Statistics</NavLink>
 						</motion.div>
 						<motion.div variants={linkVariants} transition={{ delay: (linkAnimationDelay * 1.5) }}>
-							<NavLink to='/movies' onClick={() => setMenuOpen(!menuOpen)}>Se vårt utbud</NavLink>
+							<NavLink to='/movies' onClick={() => setMenuOpen(!menuOpen)}>Movies</NavLink>
 						</motion.div>
 
 					</motion.nav>

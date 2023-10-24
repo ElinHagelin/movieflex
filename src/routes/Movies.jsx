@@ -30,7 +30,7 @@ const Movies = () => {
                 <input 
                     type="text" 
                     id="search-input"
-                    placeholder="Sök film" 
+                    placeholder="Search movie title" 
                     onChange={(event) => handleSearchChange(event)} 
                 />
             </div>

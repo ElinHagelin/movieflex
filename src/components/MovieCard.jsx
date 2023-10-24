@@ -1,16 +1,25 @@
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+import { useInView } from 'react-intersection-observer';
 import { liInitial, liHover, divInitial, divHover } from "../styles/movie-card-styles.js"
 
 const MovieCard = ({movie, moviesToShow}) => {
-    const ref = useRef(null)
+    const [isVisible, setIsVisible] = useState(false);
+    const [ref, inView] = useInView();
 
-    const {scrollYProgress} = useScroll({
-        target: ref,
-        offset: ['0 1', '1.25 1']
-    })
-    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
+      useEffect(() => {
+        if (inView) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }, [inView]);
     
+    const liAnimate = {
+        opacity: isVisible ? 1 : 0, 
+        scale: isVisible ? 1 : 0.8, 
+
+    }
 
     const divAnimate = {
         opacity: moviesToShow.length === 1 ? 1 : 0, 
@@ -23,10 +32,7 @@ const MovieCard = ({movie, moviesToShow}) => {
             whileHover={liHover}
             initial={liInitial}
             ref={ref}
-            style={{
-                scale: scaleProgress,
-                opacity: scrollYProgress
-            }}
+            animate={liAnimate}
             >
             <div>
         		<h3>{movie.Title}</h3>

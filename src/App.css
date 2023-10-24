@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -35,6 +39,7 @@ header {
 
 .heading {
   color: rgb(218, 243, 221);
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .menu-button {
@@ -48,7 +53,7 @@ header {
 
 .menu-button > div {
   border: 1px solid rgb(218, 243, 221);
-  width: 20px;
+  width: 30px;
   margin: 5px 0;
 }
 
@@ -67,6 +72,7 @@ header {
 }
 
 .menu > div > a {
+  margin-left: 1em;
   text-decoration: none;
   color: rgb(218, 243, 221);
   font-size: 1.2em;
@@ -87,9 +93,10 @@ header {
   align-items: center;
 }
 
-
 .search-container > input {
-  padding: 0.3em
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: none;
 }
 
 ul {
