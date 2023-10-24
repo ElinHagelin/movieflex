@@ -27,10 +27,10 @@ const Movies = () => {
     return (
         <main className="movies-container">
             <div className="search-container">
-                <label htmlFor="search-input">Sök film</label>
                 <input 
                     type="text" 
-                    id="search-input" 
+                    id="search-input"
+                    placeholder="Sök film" 
                     onChange={(event) => handleSearchChange(event)} 
                 />
             </div>

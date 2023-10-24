@@ -3,13 +3,15 @@ ChartJS.register(Tooltip, Legend, LinearScale, BarElement, CategoryScale);
 import { Bar } from 'react-chartjs-2'
 import getMoviesPerMonth from '../../data/chartConfigs/monthBarConfig.js';
 
-const MonthBar = ({slideVariants, direction}) => {
+const MonthBar = () => {
 
     const options = {
         plugins: {
             title: {
                 display: true,
                 text: 'Movies released in 2022',
+                color: 'black',
+                fontSize: '2em'
             },
         },
         scales: {
@@ -17,7 +19,7 @@ const MonthBar = ({slideVariants, direction}) => {
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'Movies',
+                text: 'Movies'
               },
             },
           },
@@ -26,13 +28,7 @@ const MonthBar = ({slideVariants, direction}) => {
     const MonthBarConfig = getMoviesPerMonth()
 
     return (
-        <section 
-            className='chart'
-            // variants={slideVariants}
-            // initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
-            // animate="visible"
-            // exit="exit"     
-        >
+        <section className='chart'>
             <Bar options={options} data={MonthBarConfig} />
         </section>
     )

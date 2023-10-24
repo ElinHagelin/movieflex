@@ -3,7 +3,7 @@ ChartJS.register(Tooltip, Legend, LinearScale, BarElement, CategoryScale);
 import { Bar } from 'react-chartjs-2'
 import getMovieGenre from '../../data/chartConfigs/genreBarConfig.js';
 
-const GenreBar = ({slideVariants, direction}) => {
+const GenreBar = () => {
     const genreBarConfig = getMovieGenre()
 
     const options = {
@@ -25,13 +25,7 @@ const GenreBar = ({slideVariants, direction}) => {
     };
 
     return (
-        <section 
-            className='chart'
-            // variants={slideVariants}
-            // initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
-            // animate="visible"
-            // exit="exit"     
-        >
+        <section className='chart'>
             <Bar options={options} data={genreBarConfig} />
         </section>
     )

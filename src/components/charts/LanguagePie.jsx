@@ -4,7 +4,7 @@ import { Pie } from 'react-chartjs-2'
 import { motion } from 'framer-motion';
 import getAllLanguages from '../../data/chartConfigs/languagePieConfig.js';
 
-const LanguagePie = ({slideVariants, direction}) => {
+const LanguagePie = () => {
 
     const languagePieConfig = getAllLanguages()
 
@@ -13,18 +13,13 @@ const LanguagePie = ({slideVariants, direction}) => {
             title: {
                 display: true,
                 text: 'Languages',
-            },
+                color: 'black'
+            }
         },
     };
 
     return (
-        <section 
-            className='chart'
-            // variants={slideVariants}
-            // initial={direction === "right" ? "hiddenRight" : "hiddenLeft"}
-            // animate="visible"
-            // exit="exit"     
-        >
+        <section className='chart'>
             <Pie options={options} data={languagePieConfig} />
         </section>
     )

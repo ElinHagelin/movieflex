@@ -44,7 +44,6 @@ const getMovieRuntime = () => {
             }
         ]
     }
-    // Göra om: antalet filmer på y-axeln och tid på x-axeln?
 }
 
 export default getMovieRuntime

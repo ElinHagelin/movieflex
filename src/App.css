@@ -3,16 +3,24 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #0f1a11;
+}
+
 html, body {
   min-height: 100%;
 }
 
 #root {
-	width: min(100% - 2rem, 60rem);
+	width: min(100% - 2rem, 80rem);
+  height: 100vh;
 	margin-inline: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+  isolation: isolate;
+  position: relative;
+  /* overflow: hidden; */
 }
 
 header {
@@ -25,6 +33,10 @@ header {
   height: 40px;
 }
 
+.heading {
+  color: rgb(218, 243, 221);
+}
+
 .menu-button {
   position: fixed;
   top: 10px;
@@ -35,7 +47,7 @@ header {
 }
 
 .menu-button > div {
-  border: 1px solid black;
+  border: 1px solid rgb(218, 243, 221);
   width: 20px;
   margin: 5px 0;
 }
@@ -49,14 +61,19 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2.5em;
-  background-color: beige;
-  box-shadow: 0.3 0.3 0.6 #5c5c5c;
+  background-color: rgb(61, 76, 52);
+  box-shadow: 0.3 0.3 0.6 #070c08;
+  z-index: 1;
 }
 
 .menu > div > a {
   text-decoration: none;
-  color: black;
+  color: rgb(218, 243, 221);
   font-size: 1.2em;
+}
+
+.menu > div > a:hover {
+  transform: scale(1.05);
 }
 
 .movies-container {
@@ -70,6 +87,7 @@ header {
   align-items: center;
 }
 
+
 .search-container > input {
   padding: 0.3em
 }
@@ -79,23 +97,41 @@ ul {
   padding-inline-start:0
 }
 
+ul > li {
+  border-radius: 1em;
+  margin-bottom: 0.7em;
+}
+
 ul > li > div {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  background-color: #405c39;
+  border-radius: 1em;
   margin: 0.5em 0;
   padding: 0.3em;
   min-width: 40vw;
+  color: rgb(218, 243, 221);
 }
 
 .carousel {
   position: relative;
-  width: 80vw;
-  height: 70vh;
+  min-width: 60vw;
+  height: 80vh;
   place-content: center;
+  background-color: #dce4df;
+  padding: 5vh 0 10vh 0;
+  border-radius: 0.2em;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  width: 85%;
+  height: 99%;
+  margin: auto;
 }
 
 .chart-container {
-  width: 85%;
-  height: 99%;
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
 
@@ -117,7 +153,8 @@ ul > li > div {
 
 .left,
 .right {
-  background-color: #97cf8a;
+  background-color: #bde1b5;
+  background-color: #aad3a2;
   color: #fff;
   padding: 10px 8px 8px 13px;
   margin: 0 20px;
@@ -157,3 +194,4 @@ ul > li > div {
 .dot.active {
   background-color: #4c7642;
 }
+

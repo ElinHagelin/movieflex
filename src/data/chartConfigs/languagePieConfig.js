@@ -12,7 +12,8 @@ const getAllLanguages = () => {
         datasets: [{
             label: 'Movie Languages',
             data: sortedLanguageArray.map(movie => movie.amount),
-            backgroundColor: colors
+            backgroundColor: colors,
+            borderWidth: 0.3
         }]}
 } 
 

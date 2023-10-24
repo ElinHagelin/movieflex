@@ -7,7 +7,7 @@ const transition = { duration: 0.4 }
 
 const liHover = {
     scale: 1.03,
-    boxShadow: '0.3em 0.3em 0.6em #8a8a8a',
+    boxShadow: '0.3em 0.3em 0.6em #070c08',
     transition: transition
 }
 

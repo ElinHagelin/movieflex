@@ -16,12 +16,13 @@ const Header = () => {
 					rotate: [0, 90, 180, 270, 360],
 					x: [-200, -150, -100, -50, 0],
 				}}
-				transition={{type: "spring", duration: 1}}
+				transition={{type: "spring", duration: 1.5}}
 			/>
 
 			<motion.h1 
-				animate={{x: [-20, 0],}}
-				transition={{type: "spring", delay: 0.35}}
+				className="heading"
+				animate={{x: [-30, 0],}}
+				transition={{type: "spring", delay: 0.45}}
 			>
 				MovieFlex
 			</motion.h1>
