@@ -14,22 +14,25 @@ const LengthLine = () => {
                 display: true,
                 text: 'Runtime',
             },
+            legend: {
+                cursor: 'pointer'
+            }
         },
         scales: {
             x: {
-              title: {
-                display: true,
-                text: 'Movies',
-              },
+                title: {
+                    display: true,
+                    text: 'Movies',
+                },
             },
             y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: 'Minutes',
-              },
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Minutes',
+                },
             },
-          },
+        },
     };
 
     return (

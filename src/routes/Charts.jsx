@@ -8,6 +8,7 @@ import Arrows from "../components/Arrows.jsx"
 import Dots from "../components/Dots.jsx"
 import { slideVariants } from "../styles/carousel-styles.js"
 import Slides from "../components/Slides.jsx"
+import GenreDoughnut from "../components/charts/GenreDoughnut.jsx"
 
 const components = [LanguagePie, MonthBar, LengthLine, GenreBar]
 

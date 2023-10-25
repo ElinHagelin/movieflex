@@ -22,7 +22,8 @@ const getMovieGenre = () => {
             {
                 label: 'Movie genres',
                 data: sortedGenreArray.map(obj => obj.amount),
-                backgroundColor: colors
+                backgroundColor: colors,
+                borderWidth: 0.3
             }
         ]
     }

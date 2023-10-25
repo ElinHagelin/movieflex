@@ -7,6 +7,7 @@ const GenreBar = () => {
     const genreBarConfig = getMovieGenre()
 
     const options = {
+        // indexAxis: 'y',
         plugins: {
             title: {
                 display: true,
