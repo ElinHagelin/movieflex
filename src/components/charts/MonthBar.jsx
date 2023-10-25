@@ -10,8 +10,8 @@ const MonthBar = () => {
             title: {
                 display: true,
                 text: 'Movies released in 2022',
-                color: 'black',
-                fontSize: '2em'
+                fontSize: 20,
+                padding: 20
             },
         },
         scales: {
@@ -22,6 +22,13 @@ const MonthBar = () => {
                 text: 'Movies'
               },
             },
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            ]
           },
     };
     

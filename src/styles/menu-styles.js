@@ -20,10 +20,13 @@ export const linkVariants = {
       opacity: 1,
       x: 1,
     },
+    hover: {
+      scale: 1.1,
+      transition: {
+        duration: 0.3,
+      },
+    }
 };
 
-export const transition = {
-    duration: 0.3,
-};
 
 export const linkAnimationDelay = 0.3;

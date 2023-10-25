@@ -9,6 +9,7 @@ const Arrows = ({handlePrevious, handleNext}) => {
             className="left" 
             onClick={handlePrevious}
             variants={slidersVariants}
+            initial="initial"
             whileHover="hover"
             whileTap="tap"
         >
@@ -25,6 +26,7 @@ const Arrows = ({handlePrevious, handleNext}) => {
             className="right" 
             onClick={handleNext}
             variants={slidersVariants}
+            initial="initial"
             whileHover="hover"
             whileTap="tap"
         >

@@ -13,7 +13,6 @@ const LanguagePie = () => {
             title: {
                 display: true,
                 text: 'Languages',
-                color: 'black'
             }
         },
     };

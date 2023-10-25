@@ -11,11 +11,22 @@ const Menu = ({menuOpen, setMenuOpen}) => {
 					animate='open'
 					exit='closed'
 					>
-						<motion.div variants={linkVariants} transition={{ delay: linkAnimationDelay }}>
+						<motion.div
+						className="link-container" 
+						variants={linkVariants}
+						whileHover="hover"
+						transition={{ delay: linkAnimationDelay }}>
 							<NavLink to='/' onClick={() => setMenuOpen(!menuOpen)}>Statistics</NavLink>
 						</motion.div>
-						<motion.div variants={linkVariants} transition={{ delay: (linkAnimationDelay * 1.5) }}>
-							<NavLink to='/movies' onClick={() => setMenuOpen(!menuOpen)}>Movies</NavLink>
+						<motion.div 
+						className="link-container" 
+						variants={linkVariants}
+						whileHover="hover" 
+						transition={{ delay: (linkAnimationDelay * 1.5) }}>
+							<NavLink 
+								to='/movies' 
+								onClick={() => setMenuOpen(!menuOpen)}
+								>Movies</NavLink>
 						</motion.div>
 
 					</motion.nav>
