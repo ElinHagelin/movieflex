@@ -22,6 +22,7 @@ export const linkVariants = {
     },
     hover: {
       scale: 1.1,
+      x: 1,
       transition: {
         duration: 0.3,
       },

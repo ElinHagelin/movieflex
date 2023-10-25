@@ -14,9 +14,6 @@ const LengthLine = () => {
                 display: true,
                 text: 'Runtime',
             },
-            legend: {
-                cursor: 'pointer'
-            }
         },
         scales: {
             x: {

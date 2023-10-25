@@ -15,10 +15,6 @@ const GenreDoughnut = () => {
             },
             legend: {
                 // display: false,
-                // labels: {
-                //     fontSize: 10, // Ändra teckensnittsstorlek
-                //     fontColor: 'black', // Ändra textfärg
-                // },
             }
         },
     };

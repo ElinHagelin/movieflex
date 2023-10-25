@@ -14,14 +14,14 @@ const Menu = ({menuOpen, setMenuOpen}) => {
 						<motion.div
 						className="link-container" 
 						variants={linkVariants}
-						whileHover="hover"
+						// whileHover="hover"
 						transition={{ delay: linkAnimationDelay }}>
 							<NavLink to='/' onClick={() => setMenuOpen(!menuOpen)}>Statistics</NavLink>
 						</motion.div>
 						<motion.div 
 						className="link-container" 
 						variants={linkVariants}
-						whileHover="hover" 
+						// whileHover="hover"
 						transition={{ delay: (linkAnimationDelay * 1.5) }}>
 							<NavLink 
 								to='/movies' 

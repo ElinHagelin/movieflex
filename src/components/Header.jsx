@@ -13,20 +13,12 @@ const Header = () => {
 			<motion.img 
 				className='logo' 
 				src="../assets/images/logo.png" alt="logo" 
-				// animate={{
-				// 	rotate: [0, 90, 180, 270, 360],
-				// 	x: [-200, -150, -100, -50, 0],
-				// 	// width: [45, 45, 45, 45, 10, 45 ]
-				// }}
-				// transition={{type: "spring", duration: 1.5}}
 				variants={logoVariants}
 				animate="animate"
 			/>
 
 			<motion.h1 
 				className="heading"
-				// animate={{x: [-30, 0],}}
-				// transition={{type: "spring", delay: 0.35}}
 				variants={headingVariants}
 				animate="animate"
 			>
