@@ -1,23 +1,23 @@
-import { motion } from "framer-motion"
-import { dotsVariants } from "../styles/carousel-styles.js"
+import { motion } from 'framer-motion';
+import { dotsVariants } from '../styles/carousel-styles.js';
+import { initial, animate, hover } from '../data/constants.js';
 
-const Dots = ({components, currentIndex, handleDotClick}) => {
+const Dots = ({ components, currentIndex, handleDotClick }) => {
+	return (
+		<div className='indicator'>
+			{components.map((_, index) => (
+				<motion.div
+					key={index}
+					className={`dot ${currentIndex === index ? 'active' : ''}`}
+					onClick={() => handleDotClick(index)}
+					initial={initial}
+					animate={currentIndex === index ? animate : ''}
+					variants={dotsVariants}
+					whileHover={hover}
+				></motion.div>
+			))}
+		</div>
+	);
+};
 
-    return (
-        <div className="indicator">
-        {components.map((_, index) => (
-        <motion.div
-            key={index}
-            className={`dot ${currentIndex === index ? "active" : ""}`}
-            onClick={() => handleDotClick(index)}
-            initial="initial"
-            animate={currentIndex === index ? "animate" : ""}
-            variants={dotsVariants}
-            whileHover="hover"
-        ></motion.div>
-        ))}
-    </div>
-    )
-}
-
-export default Dots
+export default Dots;

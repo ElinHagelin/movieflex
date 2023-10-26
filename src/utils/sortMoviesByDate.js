@@ -1,21 +1,21 @@
-import { months } from '../data/constants.js'
+import { months } from '../data/constants.js';
 
 function sortMoviesByDate(inputArray) {
+	const monthArray = [];
 
-    const monthArray = []
+	months.map((month) => monthArray.push({ month: month, amount: 0 }));
 
-    months.map(month => monthArray.push({month: month, amount: 0}))
+	inputArray.forEach((dateString) => {
+		const splitDate = dateString.split(' ');
+		const month = splitDate[0];
 
-    inputArray.forEach(dateString => {
-        const splitDate = dateString.split(' ')
-        const month = splitDate[0]
+		const existingMonth = monthArray.find(
+			(object) => object.month == month
+		);
+		existingMonth.amount++;
+	});
 
-        const existingMonth = monthArray.find(object => object.month == month);
-        existingMonth.amount++ 
-    });
-
-    return monthArray
+	return monthArray;
 }
 
-
-export default sortMoviesByDate
+export default sortMoviesByDate;
