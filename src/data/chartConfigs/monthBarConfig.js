@@ -3,6 +3,7 @@ import specials from '../movieData/specials.json';
 import documentaries from '../movieData/documentaries.json';
 import sortMoviesByDate from '../../utils/sortMoviesByDate.js';
 import { mapArray } from '../../utils/manipulateArrays.js';
+import { colors } from '../constants.js';
 
 const getMoviesPerMonth = () => {
 	const featureFilmsArray = mapArray(featureFilms, 'Premiere');
@@ -19,17 +20,17 @@ const getMoviesPerMonth = () => {
 			{
 				label: 'Feature films',
 				data: sortedFeatureFilmsArray.map((obj) => obj.amount),
-				backgroundColor: '#B2C9A6',
+				backgroundColor: colors[5],
 			},
 			{
 				label: 'Specials',
 				data: sortedSpecialsArray.map((obj) => obj.amount),
-				backgroundColor: '#85B373',
+				backgroundColor: colors[10],
 			},
 			{
 				label: 'Documentaries',
 				data: sortedDocumentariesArray.map((obj) => obj.amount),
-				backgroundColor: '#5E7670',
+				backgroundColor: colors[15],
 			},
 		],
 	};

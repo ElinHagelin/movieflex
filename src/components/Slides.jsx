@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { slideVariants } from '../styles/carousel-styles.js';
 
