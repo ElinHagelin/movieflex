@@ -12,7 +12,7 @@ const Header = () => {
 		<header>
 			<motion.img
 				className='logo'
-				src='../../public/images/logo.png'
+				src='./images/logo.png'
 				alt='logo'
 				variants={logoVariants}
 				animate={animate}

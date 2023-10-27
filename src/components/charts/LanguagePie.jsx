@@ -1,27 +1,17 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend} from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
-import { Pie } from 'react-chartjs-2'
+import { Pie } from 'react-chartjs-2';
 import { motion } from 'framer-motion';
 import getAllLanguages from '../../data/chartConfigs/languagePieConfig.js';
 
 const LanguagePie = () => {
+	const languagePieConfig = getAllLanguages();
 
-    const languagePieConfig = getAllLanguages()
+	return (
+		<section className='chart'>
+			<Pie data={languagePieConfig} />
+		</section>
+	);
+};
 
-    const options = {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Languages',
-            }
-        },
-    };
-
-    return (
-        <section className='chart'>
-            <Pie options={options} data={languagePieConfig} />
-        </section>
-    )
-}
-
-export default LanguagePie
+export default LanguagePie;

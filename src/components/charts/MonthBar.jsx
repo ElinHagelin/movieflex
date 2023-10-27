@@ -12,14 +12,6 @@ import getMoviesPerMonth from '../../data/chartConfigs/monthBarConfig.js';
 
 const MonthBar = () => {
 	const options = {
-		plugins: {
-			title: {
-				display: true,
-				text: 'Movies released in 2022',
-				fontSize: 20,
-				padding: 20,
-			},
-		},
 		scales: {
 			y: {
 				beginAtZero: true,

@@ -34,7 +34,9 @@ const Charts = () => {
 		<div className='carousel'>
 			<Slides
 				currentIndex={currentIndex}
+				setCurrentIndex={setCurrentIndex}
 				direction={direction}
+				setDirection={setDirection}
 				components={components}
 			/>
 
